@@ -20,4 +20,8 @@ public class MovingForwardCube : MovingCube
         }
     }
 
+    public override void splitCube(float split)
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -43,6 +43,8 @@ public abstract class MovingCube : MonoBehaviour
 
     public abstract void positionCheck(IMovingBehavior movingBehavior);
 
+    public abstract void splitCube(float split);
+
     public void moveForward(IMovingBehavior movingBehavior)
     {
         movingBehavior.updatePosition(this.moveSpeed);

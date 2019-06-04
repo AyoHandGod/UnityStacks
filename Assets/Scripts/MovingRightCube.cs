@@ -10,7 +10,14 @@ public class MovingRightCube : MovingCube
         {
             float hangover = LastCube.transform.position.x - movingBehavior.transform.position.x;
             Debug.Log("Float From the MovingRightCube is currently: " + hangover);
+
+            splitCube(hangover);
         }
+    }
+
+    public override void splitCube(float split)
+    {
+        this.transform.localScale = new Vector3(-split, 0, 0);
     }
 
     private void Start()
