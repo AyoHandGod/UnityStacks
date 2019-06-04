@@ -9,15 +9,16 @@ public class MovingRightCube : MovingCube
         if(movingBehavior.transform.position.x < LastCube.transform.position.x)
         {
             float hangover = LastCube.transform.position.x - movingBehavior.transform.position.x;
-            Debug.Log("Float From the MovingRightCube is currently: " + hangover);
 
-            splitCube(hangover);
+            StartCoroutine(splitCube(hangover));
         }
     }
 
-    public override void splitCube(float split)
+    public override IEnumerator splitCube(float split)
     {
         this.transform.localScale = new Vector3(-split, 0, 0);
+        Debug.Log("Calling the splitCube method");
+        yield return new WaitForEndOfFrame();
     }
 
     private void Start()

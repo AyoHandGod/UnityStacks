@@ -16,12 +16,13 @@ public class MovingForwardCube : MovingCube
         if (movingBehavior.transform.position.z > LastCube.transform.position.z)
         {
             float hangover = movingBehavior.transform.position.z - LastCube.transform.position.z;
-            Debug.Log("Float from the MovingForwardCube is currently: " + hangover);
         }
     }
 
-    public override void splitCube(float split)
+    public override IEnumerator splitCube(float split)
     {
-        throw new System.NotImplementedException();
+        this.transform.localScale = new Vector3(-split, 0, -split);
+        yield return new WaitForEndOfFrame();
+        this.transform.localScale = new Vector3(-split, 0, -split);
     }
 }
